@@ -32,9 +32,6 @@ function addBlockIcons() {
         console.log(elem)
     }
 }
-function addLegend() {
-    
-}
 document.onreadystatechange = () => {
     if(document.readyState === 'complete')
         addBlockIcons()

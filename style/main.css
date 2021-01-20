@@ -99,6 +99,10 @@ body {
     width: 2rem;
     height: 2rem;
 }
+.navButton svg {
+    width: 1em;
+    height: 1em;
+}
 .navButtonImg,
 .navButtonImg:hover,
 .navButtonImg:active {
