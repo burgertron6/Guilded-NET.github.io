@@ -1,0 +1,109 @@
+:not(pre)>code {
+    line-break: strict;
+    white-space: pre-wrap;
+    border-radius: 0.2rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+}
+
+
+/* Makes side info smaller */
+.sideInfo .contents {
+    font-size: 0.8rem;
+}
+/* Documentation text */
+p, li {
+    line-height: 1.4rem;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: var(--foreground-level-1);
+    font-family: var(--font-header);
+}
+h1 {
+    border-bottom: var(--header-border);
+}
+/* Blockquotes */
+blockquote {
+    margin: 0;
+    padding: var(--tiny-space-size);
+    padding-left: var(--small-space-size);
+    margin-top: var(--small-space-size);
+    margin-bottom: var(--small-space-size);
+    border-left: 0.2rem solid #EBBC03;
+    border-radius: var(--button-space-size);
+    background-color: #FFFFFF09;
+    white-space: nowrap;
+    align-items: center;
+    display: flex;
+}
+blockquote {
+    line-height: 1.4rem;
+}
+blockquote .quote-side {
+    margin-right: 0.5rem;
+}
+blockquote .quote-body {
+    white-space: normal;
+    flex: 1;
+}
+
+.info-block {
+    border-left: 0.2rem solid #42a9ee;
+}
+.info-block svg {
+    color: #42a9ee;
+}
+.note-block {
+    border-left: 0.2rem solid #7e42ee;
+}
+.note-block svg {
+    color: #7e42ee;
+}
+.caution-block {
+    border-left: 0.2rem solid #ee6442;
+}
+.caution-block svg {
+    color: #ee6442;
+}
+.warning-block {
+    border-left: 0.2rem solid #ee9e42;
+}
+.warning-block svg {
+    color: #ee9e42;
+}
+.success-block {
+    border-left: 0.2rem solid #9eee42;
+}
+.success-block svg {
+    color: #9eee42;
+}
+
+/* Styles both markdown inline code and code blocks */
+code {
+    font-family: var(--font-code);
+    color: var(--foreground-level-3);
+    background-color: var(--background-level-1);
+}
+
+/* Removes space before and after pre */
+pre {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+/* Styles footnote start */
+.footnotes hr {
+    border: var(--header-border);
+}
+
+/* Markdown links */
+a {
+    color: #F5C400;
+}
+a:visited {
+    color: #F47600;
+}
+a:active {
+    color: #F4F000;
+}

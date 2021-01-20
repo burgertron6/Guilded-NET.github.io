@@ -1,0 +1,118 @@
+/* PrismJS 1.22.0 */
+
+
+/*
+    This theme is Ayu.
+    If you want to check it out, go here:
+    https://github.com/dempfi/ayu
+*/
+
+pre code {
+    background-color: var(--background-code);
+    color: #cdc9c1;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    display: block;
+    overflow-x: auto;
+    font-size: 0.8rem;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+
+/* Inline code */
+
+:not(pre)>code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+    white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #8b8983;
+}
+
+.token.punctuation {
+    color: #ff8074;
+}
+
+.token.deleted {
+    color: #d96c75;
+}
+
+.token.namespace,
+.token.attr-name,
+.token.function-name {
+    color: #ffd471;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+    color: #f5c79c;
+}
+
+.token.tag,
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+    color: #009FEC;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+    color: #ffa346;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+    color: #aee96e;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+    color: #cdc9c1;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+.token.inserted {
+    color: #d19e9e;
+}

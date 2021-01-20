@@ -1,0 +1,129 @@
+:root {
+    --background-code: #141414;
+    --font-code: "Segoe UI", "Arial";
+    --font-normal: Calibri, Arial;
+    --font-header: "Calisto MT", "Bookman Old Style", Calibri, Arial;
+    --background-very-dark: #1C1C1C;
+    --background-level-1: #121212;
+    --background-level-2: #191919;
+    --background-level-3: #212121;
+    --foreground-level-1: #FFFFFF;
+    --foreground-level-2: #DDDDDD;
+    --foreground-level-3: #BBBBBB;
+    --header-border: 1px solid #FFFFFF11;
+    --button-space-size: 0.5rem;
+    --tiny-space-size: 0.2rem;
+    --small-space-size: 1rem;
+    --default-space-size: 2rem;
+    --big-space-size: 3rem;
+}
+
+body {
+    background-color: var(--background-level-2);
+    color: var(--foreground-level-2);
+    font-family: var(--font-normal);
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+
+/* Changes scrollbar to a custom scrollbar */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--background-level-1);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--background-level-2);
+    border-radius: 1rem;
+}
+
+* {
+    /* Firefox scrollbar */
+    scrollbar-width: auto;
+    scrollbar-color: var(--background-level-3) var(--background-level-1);
+}
+
+
+/* Sets a top of the page */
+.pageTop {
+    background-color: var(--background-level-1);
+    color: var(--foreground-level-1);
+    width: 100%;
+    padding-bottom: var(--small-space-size);
+    vertical-align: top;
+}
+
+.pageTop img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--small-space-size);
+    cursor: pointer;
+}
+
+
+/* A fixed/sticky navigation on top of the screen */
+
+.navigation {
+    position: sticky;
+    top: 0;
+    background-color: var(--background-level-1);
+    color: var(--foreground-level-1);
+    width: 100%;
+    cursor: default;
+    vertical-align: top;
+    z-index: 10;
+}
+.navButton {
+    vertical-align: middle;
+    border: 0px;
+    background-color: var(--background-level-1);
+    color: var(--foreground-level-1);
+    margin: 0;
+    padding: var(--button-space-size);
+    cursor: pointer;
+}
+.navButton:hover {
+    background-color: var(--background-level-3);
+}
+.navButton:active {
+    background-color: var(--background-level-2);
+}
+.navButton img {
+    width: 2rem;
+    height: 2rem;
+}
+.navButtonImg,
+.navButtonImg:hover,
+.navButtonImg:active {
+    padding: 0;
+    background-color: var(--background-level-1);
+}
+
+/* Body of the page */
+.documentBody {
+    overflow: hidden;
+    display: flex;
+}
+.mainBody {
+    padding: var(--default-space-size);
+    float: right;
+    width: 75%;
+}
+.sideInfo {
+    float: right;
+    width: 20%;
+    padding: var(--default-space-size);
+    z-index: 9;
+}
+.sideInfo div.contents {
+    background-color: var(--background-level-3);
+    padding: var(--small-space-size);
+    border-radius: var(--small-space-size);
+}

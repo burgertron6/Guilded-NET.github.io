@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Guilded.NET</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/IconWhiteOutline.png">
+    <!-- HTML encoding -->
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <!-- Adds all of the styling of the website -->
+    <link rel="stylesheet" type="text/css" href="../style/main.css" />
+    <link rel="stylesheet" type="text/css" href="../style/documentation.css" />
+    <link rel="stylesheet" type="text/css" href="../style/prism.css" />
+    <link rel="stylesheet" type="text/css" href="../style/fa.css" />
+    <!-- Adds all of the libraries -->
+    <script src="../script/prism.js"></script>
+    <!-- Guilded.NET websites JavaScript files -->
+    <script src="../script/fa.js"></script>
+    <script src="../script/main.js"></script>
+</head>
+
+<body>
+    <!-- Top of the page -->
+    <div class="pageTop">
+        <img onclick="openLink('https://github.com/Guilded-NET/Guilded.NET/')" src="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/BannerGithub.png" width="25%" />
+    </div>
+    <div class="navigation">
+        <!-- Guilded.NET banner -->
+        <button class="navButton navButtonImg" onclick="openLink('./index')">
+            <img src="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/IconWhiteOutline.png" />
+        </button>
+        <!-- Navigation buttons -->
+        <button class="navButton" onclick="openLink('../guides')"><i class="fas fa-book-open"></i> Guides</button>
+        <button class="navButton" onclick="openLink('../references')"><i class="fas fa-book"></i> References</button>
+        <button class="navButton" onclick="openLink('https://github.com/Guilded-NET/Guilded.NET/')"><i class="fab fa-github"></i> Github</button>
+        <button class="navButton" onclick="openLink('https://www.nuget.org/packages/Guilded.NET/')"><i class="fas fa-box"></i> NuGet</button>
+        <button class="navButton" onclick="openLink('https://www.guilded.gg/Programming/groups/1DvNOxOD/channels/94a1b65f-50e4-4fb3-a355-e285e7c5257d/chat')"><i class="fab fa-guilded"></i> Discussions</button>
+    </div>
+    <!-- The main body of the page -->
+    <div class="documentBody">
+        <div class="sideInfo">
+            <div class="contents">
+                <!-- Template: side.md -->
+            </div>
+        </div>
+        <div class="mainBody">
+            <h1 id="baseguildedclient"><code>BaseGuildedClient</code></h1>
+<pre><code>A base for Guilded client.
+</code></pre>
+<p><strong>Type:</strong> <code>Class</code><br />
+<strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Abstract</code></li>
+</ul>
+<blockquote>
+<h2 id="baseguildedclient-1"><code>BaseGuildedClient</code></h2>
+<pre><code>A base for Guilded client.
+</code></pre>
+<p><strong>Type:</strong> <code>Constructor</code><br />
+<strong>Parameters:</strong></p>
+<ul>
+<li>Uri <code>apiUrl</code> - URL of Guilded API</li>
+<li>Uri <code>mediaUrl</code> - URL for media uploading</li>
+</ul>
+<p><strong>Exceptions:</strong></p>
+<ul>
+<li><code>ArgumentNullException</code> - When apiUrl or socketUrl are null</li>
+<li><code>UriFormatException</code> - When apiurl or socketurl are invalid</li>
+</ul>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="baseguildedclient-2"><code>BaseGuildedClient</code></h2>
+<pre><code>A base for Guilded client.
+</code></pre>
+<p><strong>Type:</strong> <code>Constructor</code></p>
+<p><strong>Exceptions:</strong></p>
+<ul>
+<li><code>ArgumentNullException</code> - When apiUrl or socketUrl are null</li>
+<li><code>UriFormatException</code> - When apiurl or socketurl are invalid</li>
+</ul>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="taskirestresponseobject-connectasync">Task&lt;IRestResponse&lt;object&gt;&gt; <code>ConnectAsync</code></h2>
+<pre><code>Connects to Guilded client/user.
+</code></pre>
+<p><strong>Type:</strong> <code>Method</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Abstract</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="eventhandler-connected">EventHandler <code>Connected</code></h2>
+<pre><code>Event when client connects to the Guilded.
+</code></pre>
+<p><strong>Type:</strong> <code>Event</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="eventhandler-connectedevent">EventHandler <code>ConnectedEvent</code></h2>
+<pre><code>Events when client gets connected.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Protected</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="double-defaultheartbeat">double <code>DefaultHeartbeat</code></h2>
+<pre><code>Default span of time between heartbeats.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Static</code></li>
+<li><code>Read-only</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="taskirestresponseobject-disconnectasync">Task&lt;IRestResponse&lt;object&gt;&gt; <code>DisconnectAsync</code></h2>
+<pre><code>Disconnects from Guilded client/user.
+</code></pre>
+<p><strong>Type:</strong> <code>Method</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Abstract</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="eventhandler-disconnected">EventHandler <code>Disconnected</code></h2>
+<pre><code>Event when client disconnects from Guilded.
+</code></pre>
+<p><strong>Type:</strong> <code>Event</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="eventhandler-disconnectedevent">EventHandler <code>DisconnectedEvent</code></h2>
+<pre><code>Events when client gets disconnected.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Protected</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="eventhandlerguildedexception-error">EventHandler&lt;GuildedException&gt; <code>Error</code></h2>
+<pre><code>Event when error occurs.
+</code></pre>
+<p><strong>Type:</strong> <code>Event</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="eventhandlerguildedexception-errorevent">EventHandler&lt;GuildedException&gt; <code>ErrorEvent</code></h2>
+<pre><code>Event when error occurs.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Protected</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="taskirestresponset-executerequestt">Task&lt;IRestResponse&lt;<strong>T</strong>&gt;&gt; <code>ExecuteRequest</code>&lt;<strong>T</strong>&gt;</h2>
+<pre><code>Sends a request to Guilded's API with given arguments.
+</code></pre>
+<p><strong>Type:</strong> <code>Method</code></p>
+<p><strong>Exceptions:</strong></p>
+<ul>
+<li><code>GuildedException</code> - When Guilded itself throws an error</li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>Endpoint <code>endpoint</code> - Guilded API endpoint</li>
+<li>bool <code>enableCookies</code> - Args to be given to that endpoint</li>
+<li>IReqAddable[] ...<code>addables</code> - If it should add cookies to the request</li>
+</ul>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Asynchronous</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="taskirestresponset-executerequestt-1">Task&lt;IRestResponse&lt;<strong>T</strong>&gt;&gt; <code>ExecuteRequest</code>&lt;<strong>T</strong>&gt;</h2>
+<pre><code>Sends a request to Guilded's API with given arguments.
+</code></pre>
+<p><strong>Type:</strong> <code>Method</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>Endpoint <code>endpoint</code> - Guilded API endpoint</li>
+<li>IReqAddable[] ...<code>addables</code> - If it should add cookies to the request</li>
+</ul>
+<p><strong>Exceptions:</strong></p>
+<ul>
+<li><code>GuildedException</code> - When Guilded itself throws an error</li>
+</ul>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Asynchronous</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="taskirestresponseobject-executerequest">Task&lt;IRestResponse&lt;object&gt;&gt; <code>ExecuteRequest</code></h2>
+<pre><code>Sends a request to Guilded's API with given arguments.
+</code></pre>
+<p><strong>Type:</strong> <code>Method</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>Endpoint <code>endpoint</code> - Guilded API endpoint</li>
+<li>bool <code>enableCookies</code> - Args to be given to that endpoint</li>
+<li>IReqAddable[] ...<code>addables</code> - If it should add cookies to the request</li>
+</ul>
+<p><strong>Exceptions:</strong></p>
+<ul>
+<li><code>GuildedException</code> - When Guilded itself throws an error</li>
+</ul>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Asynchronous</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="taskirestresponseobject-executerequest-1">Task&lt;IRestResponse&lt;object&gt;&gt; <code>ExecuteRequest</code></h2>
+<pre><code>Sends a request to Guilded's API with given arguments.
+</code></pre>
+<p><strong>Type:</strong> <code>Method</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>Endpoint <code>endpoint</code> - Guilded API endpoint</li>
+<li>IReqAddable[] ...<code>addables</code> - If it should add cookies to the request</li>
+</ul>
+<p><strong>Exceptions:</strong></p>
+<ul>
+<li><code>GuildedException</code> - When Guilded itself throws an error</li>
+</ul>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Asynchronous</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="double-heartbeattime">double <code>HeartbeatTime</code></h2>
+<pre><code>Span of time between each heartbeat.
+</code></pre>
+<p><strong>Type:</strong> <code>Property</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="thread-heartbeatthread">Thread <code>HeartbeatThread</code></h2>
+<pre><code>Thread for heartbeats.
+</code></pre>
+<p><strong>Type:</strong> <code>Property</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Protected</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="task-heartbeatthreadmethod">Task <code>HeartbeatThreadMethod</code></h2>
+<pre><code>Method for a heartbeat thread.
+</code></pre>
+<p><strong>Type:</strong> <code>Method</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>CancellationToken <code>token</code> - Token for cancelling while loop</li>
+</ul>
+<p><strong>Exceptions:</strong></p>
+<ul>
+<li><code>GuildedException</code> - When it fails to send a ping through REST client</li>
+</ul>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Protected</code></li>
+<li><code>Virtual</code></li>
+<li><code>Asynchronous</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="cancellationtokensource-heartbeattoken">CancellationTokenSource <code>HeartbeatToken</code></h2>
+<pre><code>Token for cancelling heartbeat thread.
+</code></pre>
+<p><strong>Type:</strong> <code>Property</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Protected</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="uri-guildedapiurl">Uri <code>GuildedAPIURL</code></h2>
+<pre><code>Guilded API URL.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Static</code></li>
+<li><code>Read-only</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="uri-guildedimgurl">Uri <code>GuildedImgURL</code></h2>
+<pre><code>Guilded image CDN URL.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Static</code></li>
+<li><code>Read-only</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="uri-guildedmediaurl">Uri <code>GuildedMediaURL</code></h2>
+<pre><code>Guilded media URL. Allows you to upload images and videos.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code></p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Static</code></li>
+<li><code>Read-only</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="void-initwebsocket">void <code>InitWebsocket</code></h2>
+<pre><code>Initializes websocket.
+</code></pre>
+<p><strong>Type:</strong> <code>Method</code><br />
+<strong>Parameters:</strong></p>
+<ul>
+<li>double? <code>reconnection</code> - Seconds of time between each reconnection</li>
+<li>string <code>socketurl</code> - URL of WebSocket</li>
+<li>double <code>heartbeat</code> - Seconds between each heartbeat<br />
+<strong>Attributes:</strong></li>
+<li><code>Protected</code></li>
+<li><code>Virtual</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="ilistguildedcookie-logincookies">IList&lt;GuildedCookie&gt; <code>LoginCookies</code></h2>
+<pre><code>Cookies given when client logs in.
+</code></pre>
+<p><strong>Type:</strong> <code>Parameter</code><br />
+<strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="task-sendheartbeat">Task <code>SendHeartbeat</code></h2>
+<pre><code>Sends a heartbeat to the websocket server.
+</code></pre>
+<p><strong>Type:</strong> <code>Method</code><br />
+<strong>Parameters:</strong></p>
+<ul>
+<li>string <code>value</code> - Heartbeat value<br />
+<strong>Exceptions:</strong></li>
+<li><code>GuildedException</code> - When it fails to send a ping through REST client<br />
+<strong>Attributes:</strong></li>
+<li><code>Protected</code></li>
+<li><code>Virtual</code></li>
+<li><code>Async</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="void-setcookies">void <code>SetCookies</code></h2>
+<pre><code class="language-md">Sets cookies to list of *RestResponseCookie*.
+</code></pre>
+<p><strong>Type:</strong> <code>Method</code><br />
+<strong>Parameters:</strong></p>
+<ul>
+<li>IList&lt;RestResponseCookie<code>cookies</code> - List of login cookies<br />
+<strong>Attributes:</strong></li>
+<li><code>Public</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="taskuri-uploadimage">Task&lt;Uri&gt; <code>UploadImage</code></h2>
+<pre><code>Uploads image to Guilded.
+</code></pre>
+<p><strong>Type:</strong> <code>Method</code><br />
+<strong>Parameters:</strong></p>
+<ul>
+<li>string <code>filepath</code> - Path of the file</li>
+<li>byte[] <code>filedata</code> - Data of the file<br />
+<strong>Exceptions:</strong></li>
+<li><code>GuildedException</code> - When Guilded itself throws an error<br />
+<strong>Attributes:</strong></li>
+<li><code>Public</code></li>
+<li><code>Asynchronous</code></li>
+</ul>
+</blockquote>
+<h1 id="endpoint"><code>Endpoint</code></h1>
+<pre><code>Represents endpoint in Guilded API.
+</code></pre>
+<p><strong>Type:</strong> <code>Class</code><br />
+<strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+</ul>
+<blockquote>
+<h2 id="endpoint-1"><code>Endpoint</code></h2>
+<pre><code>Represents endpoint in Guilded API.
+</code></pre>
+<p><strong>Type:</strong> <code>Constructor</code><br />
+<strong>Parameters:</strong></p>
+<ul>
+<li>string <code>path</code> - Path of the REST Endpoint</li>
+<li>Method <code>method</code> - Method of the REST Endpoint<br />
+<strong>Attributes:</strong></li>
+<li><code>Public</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="endpoint-login">Endpoint <code>LOGIN</code></h2>
+<pre><code>Endpoint for logging into Guilded user.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code><br />
+<strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Static</code></li>
+<li><code>Read-only</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="endpoint-logout">Endpoint <code>LOGOUT</code></h2>
+<pre><code>Endpoint for logging out of the Guilded user.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code><br />
+<strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Static</code></li>
+<li><code>Read-only</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="endpoint-me">Endpoint <code>ME</code></h2>
+<pre><code>Endpoint for getting this user.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code><br />
+<strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Static</code></li>
+<li><code>Read-only</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="endpoint-password">Endpoint <code>PASSWORD</code></h2>
+<pre><code>Endpoint for setting a new password.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code><br />
+<strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Static</code></li>
+<li><code>Read-only</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="endpoint-ping">Endpoint <code>PING</code></h2>
+<pre><code>Endpoint for pinging Guilded.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code><br />
+<strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Static</code></li>
+<li><code>Read-only</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="endpoint-presence">Endpoint <code>PRESENCE</code></h2>
+<pre><code>Endpoint for changing presence(online, invisible, idle, do not disturb) to other presence.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code><br />
+<strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Static</code></li>
+<li><code>Read-only</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="endpoint-status">Endpoint <code>STATUS</code></h2>
+<pre><code>Endpoint for changing your status message and/or status emote.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code><br />
+<strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Static</code></li>
+<li><code>Read-only</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="endpoint-upload_media">Endpoint <code>UPLOAD_MEDIA</code></h2>
+<pre><code>Endpoint for uploading media to Guilded and receiving new URL. Use Guilded media URL for this, not a normal Guilded API URL.
+</code></pre>
+<p><strong>Type:</strong> <code>Field</code><br />
+<strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+<li><code>Static</code></li>
+<li><code>Read-only</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="method-endpointmethod">Method <code>EndpointMethod</code></h2>
+<pre><code>Method of the Endpoint(GET, POST, ...).
+</code></pre>
+<p><strong>Type:</strong> <code>Property</code><br />
+<strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="string-path">string <code>Path</code></h2>
+<pre><code>Path to the REST Endpoint.
+</code></pre>
+<p><strong>Type:</strong> <code>Property</code><br />
+<strong>Attributes:</strong></p>
+<ul>
+<li><code>Public</code></li>
+</ul>
+</blockquote>
+
+        </div>
+    </div>
+</body>
+
+</html>
