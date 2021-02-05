@@ -92,6 +92,10 @@ pre {
     overflow: auto;
 }
 
+table tbody tr td {
+    padding-right: 0.8rem;
+}
+
 /* Styles footnote start */
 .footnotes hr {
     border: var(--header-border);
