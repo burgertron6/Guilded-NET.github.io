@@ -22,6 +22,16 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     border-bottom: var(--header-border);
 }
+/* Links */
+a[href] {
+    color: #F5C400;
+}
+a[href]:visited {
+    color: #F47600;
+}
+a[href]:active {
+    color: #F4F000;
+}
 /* Blockquotes */
 blockquote {
     margin: 0;
@@ -101,13 +111,88 @@ table tbody tr td {
     border: var(--header-border);
 }
 
-/* Markdown links */
-a {
-    color: #F5C400;
+/***************************
+ *         Embeds
+ ***************************/
+/* Top level */
+.gembed {
+    display: inline-block;
+    background-color: var(--background-level-2);
+    border: 0.05rem solid;
+    border-color: #FFFFFF12;
+    border-radius: 0.3rem;
 }
-a:visited {
-    color: #F47600;
+.gembed-inner {
+    border-left: 0.2rem solid;
+    border-left-color: #f5bc1e;
 }
-a:active {
-    color: #F4F000;
+/* Footer and author */
+.gembed-author, .gembed-footer {
+    display: block;
+    overflow: auto;
+    padding: var(--smaller-space-size);
+}
+/* Content */
+.gembed-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: column wrap;
+    box-sizing: border-box;
+}
+.gembed-thumbnail {
+    flex: 1 1 auto;
+}
+.gembed-thumbnail img {
+    width: 8rem;
+    height: 8rem;
+}
+.gembed-body {
+    padding: 0.6rem;
+}
+/* Body */
+.gembed-author div, .gembed-footer div {
+    display: inline;
+    float: left;
+    margin: var(--tiny-space-size);
+}
+.gembed .gembed-footer {
+    background-color: var(--background-level-1);
+    color: #BBBBBB;
+}
+.gembed-img, .gembed-author-icon, .gembed-footer-icon {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+.gembed-author-text, .gembed-title, .gembed-field-title {
+    font-weight: bolder;
+}
+/* Fields */
+.gembed-title, .gembed-field-title {
+    margin-bottom: 0.2rem;
+}
+.gembed-fields {
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+.gembed-field {
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    flex: 0 0 auto;
+}
+.gembed-field-inline {
+    width: 33%;
+    flex: auto auto auto;
+}
+.gembed-field-title, .gembed-field-body {
+    display: block;
+}
+/* Image */
+.gembed-image-block img {
+    max-width: 30rem;
+    max-height: 15rem;
 }

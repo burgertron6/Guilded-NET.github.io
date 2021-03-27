@@ -13,6 +13,7 @@
     --header-border: 1px solid #FFFFFF11;
     --button-space-size: 0.5rem;
     --tiny-space-size: 0.2rem;
+    --smaller-space-size: 0.5rem;
     --small-space-size: 1rem;
     --default-space-size: 2rem;
     --big-space-size: 3rem;
@@ -67,14 +68,13 @@ body {
     cursor: pointer;
 }
 
-
 /* A fixed/sticky navigation on top of the screen */
 
 .navigation {
     position: sticky;
     top: 0;
     background-color: var(--background-level-1);
-    color: var(--foreground-level-1);
+    color: white !important;
     width: 100%;
     cursor: default;
     vertical-align: top;
@@ -82,12 +82,20 @@ body {
 }
 .navButton {
     vertical-align: middle;
-    border: 0px;
+    display: inline-block;
+    border: 0;
     background-color: var(--background-level-1);
     color: var(--foreground-level-1);
+    text-decoration: none;
     margin: 0;
     padding: var(--button-space-size);
     cursor: pointer;
+}
+.navButton[href],
+.navButton[href]:visited,
+.navButton[href]:hover,
+.navButton[href]:active {
+    color: var(--foreground-level-1) !important;
 }
 .navButton:hover {
     background-color: var(--background-level-3);
@@ -115,19 +123,19 @@ body {
     overflow: hidden;
     display: flex;
 }
-.mainBody {
-    padding: var(--default-space-size);
+.mainBody, .sideInfo {
+    background-color: var(--background-level-3);
+    border-radius: var(--smaller-space-size);
+    margin: var(--smaller-space-size);
     float: right;
+}
+.mainBody {
     width: 75%;
 }
 .sideInfo {
-    float: right;
     width: 20%;
-    padding: var(--default-space-size);
     z-index: 9;
 }
-.sideInfo div.contents {
-    background-color: var(--background-level-3);
+div.content {
     padding: var(--small-space-size);
-    border-radius: var(--small-space-size);
 }

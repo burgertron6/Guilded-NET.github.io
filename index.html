@@ -2,10 +2,16 @@
 <html>
 
 <head>
-    <title>Guilded.NET</title>
+    <title>Guilded.NET Docs</title>
     <link rel="icon" href="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/IconWhiteOutline.png">
     <!-- HTML encoding -->
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta property="og:site_name" content="Guilded.NET">
+    <meta property="og:title" content="Guilded.NET Documentation">
+    <meta property="og:description" content="Guilded.NET website for documentation and information.">
+    <meta property="og:thumbnail"
+        content="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/IconWhiteOutline.png">
+    <meta property="theme-color" content="#f5bc1e">
     <meta content="utf-8" http-equiv="encoding">
     <!-- Adds all of the styling of the website -->
     <link rel="stylesheet" type="text/css" href="./style/main.css" />
@@ -22,65 +28,90 @@
 <body>
     <!-- Top of the page -->
     <div class="pageTop">
-        <img onclick="openLink('https://github.com/Guilded-NET/Guilded.NET/')" src="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/BannerGithub.png" width="25%" />
+        <img href="https://github.com/Guilded-NET/Guilded.NET/"
+            src="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/BannerGithub.png" width="25%" />
     </div>
     <div class="navigation">
         <!-- Guilded.NET banner -->
-        <button class="navButton navButtonImg" onclick="openLink('./index')">
+        <a class="navButton navButtonImg" href="/index">
             <img src="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/IconWhiteOutline.png" />
-        </button>
+        </a>
         <!-- Navigation buttons -->
-        <button class="navButton" onclick="openLink('./guides')"><i class="fas fa-book-open"></i> Guides</button>
-        <button class="navButton" onclick="openLink('./references')"><i class="fas fa-book"></i> References</button>
-        <button class="navButton" onclick="openLink('https://github.com/Guilded-NET/Guilded.NET/')"><i class="fab fa-github"></i> Github</button>
-        <button class="navButton" onclick="openLink('https://www.nuget.org/packages/Guilded.NET/')">
+        <a class="navButton" href="/guides">
+            <i class="fas fa-book-open"></i> Guides
+        </a>
+        <a class="navButton" href="/references">
+            <i class="fas fa-book"></i> References
+        </a>
+        <a class="navButton" href="https://github.com/Guilded-NET/Guilded.NET/">
+            <i class="fab fa-github"></i> Github
+        </a>
+        <a class="navButton" href="https://www.nuget.org/packages/Guilded.NET/">
             <!-- Source: https://raw.githubusercontent.com/NuGet/Media/master/Images/MainLogo/Vector/nuget_path.svg -->
-            <svg viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <svg viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
                 <defs>
-                    <polygon id="path-1" points="0 46.021103 0 3.7002935 84.6521577 3.7002935 84.6521577 88.3419125 0 88.3419125"/>
+                    <polygon id="path-1"
+                        points="0 46.021103 0 3.7002935 84.6521577 3.7002935 84.6521577 88.3419125 0 88.3419125" />
                 </defs>
                 <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <g id="nuget">
                         <g id="Global/Logo" transform="translate(0.000000, 6.000000)">
-                            <path d="M374.424959,454.856991 C327.675805,454.856991 289.772801,416.950177 289.772801,370.196324 C289.772801,323.463635 327.675805,285.535656 374.424959,285.535656 C421.174113,285.535656 459.077116,323.463635 459.077116,370.196324 C459.077116,416.950177 421.174113,454.856991 374.424959,454.856991 M205.565067,260.814741 C176.33891,260.814741 152.657469,237.109754 152.657469,207.901824 C152.657469,178.672728 176.33891,154.988907 205.565067,154.988907 C234.791225,154.988907 258.472666,178.672728 258.472666,207.901824 C258.472666,237.109754 234.791225,260.814741 205.565067,260.814741 M378.170817,95.6417786 L236.886365,95.6417786 C164.889705,95.6417786 106.479717,154.057639 106.479717,226.082702 L106.479717,367.360191 C106.479717,439.40642 164.889705,497.77995 236.886365,497.77995 L378.170817,497.77995 C450.209803,497.77995 508.577466,439.40642 508.577466,367.360191 L508.577466,226.082702 C508.577466,154.057639 450.209803,95.6417786 378.170817,95.6417786" id="Fill-12" fill="white" fill-rule="evenodd"/>
-                            <g id="Clip-15"/>
-                            <path d="M84.6521577,46.0115787 C84.6521577,69.3990881 65.6900744,88.3419125 42.3260788,88.3419125 C18.9409203,88.3419125 0,69.3990881 0,46.0115787 C0,22.6452344 18.9409203,3.68124485 42.3260788,3.68124485 C65.6900744,3.68124485 84.6521577,22.6452344 84.6521577,46.0115787" id="Fill-14" fill="white" fill-rule="evenodd"/>
+                            <path
+                                d="M374.424959,454.856991 C327.675805,454.856991 289.772801,416.950177 289.772801,370.196324 C289.772801,323.463635 327.675805,285.535656 374.424959,285.535656 C421.174113,285.535656 459.077116,323.463635 459.077116,370.196324 C459.077116,416.950177 421.174113,454.856991 374.424959,454.856991 M205.565067,260.814741 C176.33891,260.814741 152.657469,237.109754 152.657469,207.901824 C152.657469,178.672728 176.33891,154.988907 205.565067,154.988907 C234.791225,154.988907 258.472666,178.672728 258.472666,207.901824 C258.472666,237.109754 234.791225,260.814741 205.565067,260.814741 M378.170817,95.6417786 L236.886365,95.6417786 C164.889705,95.6417786 106.479717,154.057639 106.479717,226.082702 L106.479717,367.360191 C106.479717,439.40642 164.889705,497.77995 236.886365,497.77995 L378.170817,497.77995 C450.209803,497.77995 508.577466,439.40642 508.577466,367.360191 L508.577466,226.082702 C508.577466,154.057639 450.209803,95.6417786 378.170817,95.6417786"
+                                id="Fill-12" fill="white" fill-rule="evenodd" />
+                            <g id="Clip-15" />
+                            <path
+                                d="M84.6521577,46.0115787 C84.6521577,69.3990881 65.6900744,88.3419125 42.3260788,88.3419125 C18.9409203,88.3419125 0,69.3990881 0,46.0115787 C0,22.6452344 18.9409203,3.68124485 42.3260788,3.68124485 C65.6900744,3.68124485 84.6521577,22.6452344 84.6521577,46.0115787"
+                                id="Fill-14" fill="white" fill-rule="evenodd" />
                         </g>
                     </g>
                 </g>
             </svg>
             NuGet
-        </button>
-        <button class="navButton" onclick="openLink('https://www.guilded.gg/Programming/groups/1DvNOxOD/channels/94a1b65f-50e4-4fb3-a355-e285e7c5257d/chat')"><i class="fab fa-guilded"></i> Discussions</button>
+        </a>
+        <a class="navButton"
+            href="https://www.guilded.gg/Programming/groups/1DvNOxOD/channels/94a1b65f-50e4-4fb3-a355-e285e7c5257d/chat">
+            <i class="fab fa-guilded"></i> Discussions
+        </a>
     </div>
     <!-- The main body of the page -->
     <div class="documentBody">
         <div class="sideInfo">
-            <div class="contents">
+            <div class="content">
                 <h1 id="links">Links</h1>
-<ul>
-<li><a href="https://www.nuget.org/packages/Guilded.NET/">NuGet</a></li>
-<li><a href="https://github.com/IdkGoodName/Guilded.NET/">Github</a></li>
-</ul>
+                <ul>
+                    <li><a href="https://www.nuget.org/packages/Guilded.NET/">NuGet</a></li>
+                    <li><a href="https://github.com/IdkGoodName/Guilded.NET/">Github</a></li>
+                </ul>
 
             </div>
         </div>
         <div class="mainBody">
-            <h1 id="what-is-guilded.net">What is Guilded.NET?</h1>
-<p>Guilded.NET is an API wrapper for <a href="https://guilded.gg">Guilded</a>. Guilded.NET allows you to interact with API in an easy way. Use Guilded.NET to create bots, self-bots and whatever you want. Guilded.NET uses .NET, so be sure to install it before using it.</p>
-<blockquote class="note-block">
-<p>It's currently using undocumented and unsupported API. Guilded developers will not help you in any way, shape or form.</p>
-</blockquote>
-<h1 id="developers">Developers</h1>
-<ul>
-<li><strong>IdkGoodName</strong> - founder, developer, icon designer</li>
-</ul>
-<h1 id="see-also">See also</h1>
-<ul>
-<li><strong><a href="https://www.guilded.gg/Programming/groups/1DvNOxOD/channels/94a1b65f-50e4-4fb3-a355-e285e7c5257d/chat">Guilded.NET Discussions channel</a></strong> - for discussing Guilded.NET. You need to join Programming Space for that.</li>
-<li><strong><a href="https://guilded.gg/Programming">Programming Space</a></strong> - a place to chill, place where you can discuss Guilded.NET.</li>
-</ul>
+            <div class="content">
+                <h1 id="what-is-guilded.net">What is Guilded.NET?</h1>
+                <p>Guilded.NET is an API wrapper for <a href="https://guilded.gg">Guilded</a>. Guilded.NET allows you to
+                    interact with API in an easy way. Use Guilded.NET to create bots, self-bots and whatever you want.
+                    Guilded.NET uses .NET, so be sure to install it before using it.</p>
+                <blockquote class="note-block">
+                    <p>It's currently using undocumented and unsupported API. Guilded developers will not help you in
+                        any way, shape or form.</p>
+                </blockquote>
+                <h1 id="developers">Developers</h1>
+                <ul>
+                    <li><strong>IdkGoodName</strong> - founder, developer, icon designer</li>
+                </ul>
+                <h1 id="see-also">See also</h1>
+                <ul>
+                    <li><strong><a
+                                href="https://www.guilded.gg/Programming/groups/1DvNOxOD/channels/94a1b65f-50e4-4fb3-a355-e285e7c5257d/chat">Guilded.NET
+                                Discussions channel</a></strong> - for discussing Guilded.NET. You need to join
+                        Programming Space for that.</li>
+                    <li><strong><a href="https://guilded.gg/Programming">Programming Space</a></strong> - a place to
+                        chill, place where you can discuss Guilded.NET.</li>
+                </ul>
 
+            </div>
         </div>
     </div>
 </body>
