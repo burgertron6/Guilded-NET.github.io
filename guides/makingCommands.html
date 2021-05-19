@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Guilded.NET Docs</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/IconWhiteOutline.png">
+    <!-- HTML encoding -->
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta property="og:site_name" content="Guilded.NET" />
+    <meta property="og:determiner" content="the" />
+    <meta property="og:title" content="Guilded.NET Documentation" />
+    <meta property="og:description" content="Guilded.NET website for documentation and information." />
+    <meta property="og:thumbnail"
+        content="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/IconWhiteOutline.png" />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/IconWhiteOutline.png" />
+    <meta property="og:locale" content="en_CA" />
+    <meta property="theme-color" content="#f5bc1e" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <!-- Adds all of the styling of the website -->
+    <link rel="stylesheet" type="text/css" href="../style/main.css" />
+    <link rel="stylesheet" type="text/css" href="../style/documentation.css" />
+    <link rel="stylesheet" type="text/css" href="../style/prism.css" />
+    <!-- Adds all of the libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/prism.min.js"></script>
+    <!-- Guilded.NET websites JavaScript files -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <script src="../script/main.js"></script>
+</head>
+
+<body>
+    <!-- Top of the page -->
+    <div class="pageTop">
+        <div class="pageTopInner">
+            <div class="pageDisplay">
+                <img href="/index"
+                    src="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/BannerWhite.png" />
+                <div class="navigation">
+                    <a title="Guides" href="/guides"><i class="fas fa-book-open"></i></a>
+                    <a title="References" href="/references"><i class="fas fa-book"></i></a>
+                    <a title="Github" href="https://github.com/Guilded-NET"><i class="fab fa-github"></i></a>
+                    <a title="Guilded Discussions" href="https://www.guilded.gg/guilded-api/groups/aDk5j9Jz/channels/8c247143-2009-415b-ab99-97912c0685bc/announcements"><i class="fab fa-guilded"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- The main body of the page -->
+    <div class="documentBody">
+        <div class="sideInfo">
+            <div class="content">
+                <h2 id="namespaces">Namespaces</h2>
+<ul>
+<li><code>Guilded.NET</code>
+<ul>
+<li><code>BasicGuildedClient</code></li>
+<li><code>CommandAttribute</code>/<code>Command</code></li>
+<li><code>CommandInfo</code></li>
+</ul>
+</li>
+<li><code>Guilded.NET.Objects.Events</code>
+<ul>
+<li><code>MessageCreatedEvent</code></li>
+<li><code>ContentReplyCreatedEvent</code></li>
+</ul>
+</li>
+<li><code>Guilded.NET.Objects.Chat</code>
+<ul>
+<li><code>Leaf</code></li>
+<li><code>TextContainer</code></li>
+<li><code>Node</code></li>
+<li><code>ParagraphNode</code></li>
+<li><code>Mention</code></li>
+<li><code>ChannelMention</code></li>
+<li><code>IMessageObject</code></li>
+<li><code>MsgObject</code></li>
+<li><code>NodeType</code></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div class="mainBody">
+            <div class="content">
+                <h1 id="what-are-commands">What are commands?</h1>
+<p>Commands are a way to give orders to the bot what it should do. Bots can of course have its selected list of orders and what they do. Commands are mostly used through messages, but Guilded.NET expands it further to event/document/announcement/media comments and forum replies.</p>
+<h1 id="creating-commands">Creating commands</h1>
+<h2 id="commands-in-guilded.net">Commands in Guilded.NET</h2>
+<p>Commands in Guilded.NET are methods that are executed once they are invoked through a message or a reply. To identify a command and give set of instructions for it, Guilded.NET uses <code>Guilded.NET.CommandAttribute</code>. There can only be one <code>CommandAttribute</code> per method and the method has to match delegate <code>Guilded.NET.CommandMethod&lt;T&gt;</code>. You can set name of the command, its aliases, usage, description, placement(comments or messages) using <code>CommandAttribute</code>. Let's explain what each property does:</p>
+<ul>
+<li>Aliases are alternatives names for the command that can also invoke it.</li>
+<li>Usage is a way to show how the command should be used. It has no use apart from help/command-list commands. Usage kind of has a syntax, but it doesn't need to be followed. Although it is recommended to do so:
+<ul>
+<li><code>&lt;argument name here&gt;</code> — mandatory argument.</li>
+<li><code>[argument name here]</code> — optional argument.</li>
+</ul>
+</li>
+<li>Description shortly describes what command does. It also not used outsides help/command-list command.</li>
+<li>Placement tells Guilded.NET where the command can be used (in the chat or comment section).</li>
+</ul>
+<p>Guilded.NET commands work differently than how it works in other libraries though.</p>
+<p>For instance, Guilded.NET commands can have formatting, and it'll be ignored (unless that formatting is set to escape the command. Inline code and spoilers escape commands by default). If you do <code>**!**ping</code>, <code>!~~ping~~</code>, <code>*!*~~ping~~</code>, it'll still invoke the <code>ping</code> command.</p>
+<p>Guilded.NET also splits arguments based on formatting as well, not only by strings that split the command (spaces, tabs, newlines by default). This is because arguments in Guilded.NET aren't strings. Instead, they are leaves, mentions, channel mentions and hyperlinks. Since leaves can't have 2 texts with different formatting, the command arguments get split. That's also the case with hyperlinks and mentions: they don't get clumped together with the normal argument. This means that if you do <code>!ping **a**__b__[c](https://guilded.gg)</code>, there are 3 arguments and not 1. This kind of can be confusing and not work as other bots do, but it preserves all the information that has been given by Guilded and doesn't lose it by turning a message into a string. So you don't really lose things like mentions, channel mentions and hyperlinks. It also allows you to ignore formatting in the given arguments and doesn't require additional checking.</p>
+<h2 id="creating-a-command">Creating a command</h2>
+<p>Creating a command is pretty simple. You need to make sure your command has return type <code>void</code> and has arguments <code>BasicGuildedClient</code>, <code>CommandInfo</code>, <code>MessageCreatedEvent</code>/<code>ContentReplyCreatedEvent</code> (this depends on whether the command is reply/comment based or message based).</p>
+<p>Let's explain the arguments:</p>
+<ul>
+<li><code>BasicGuildedClient</code> — the bot client that received the command invoked the method.</li>
+<li><code>CommandInfo</code> — information about command that has been used. It holds prefix that has been used, command name, arguments (leaves, mentions, channel mentions, links) and rest of the message (everything after paragraph that invoked the command. This includes images, code blocks, quote blocks and everything else).</li>
+<li><code>MessageCreatedEvent</code> <strong><strong>or</strong></strong> <code>ContentReplyCreatedEvent</code> — the event that invoked the command.</li>
+</ul>
+<h1 id="creating-commands-1">Creating commands</h1>
+<h2 id="ping-command">Ping command</h2>
+<p>To create a command that does nothing, just create a method that meets the requirements mentioned above and <code>CommandAttribute</code>:</p>
+<pre><code class="language-cs">// ...class CommandList...
+[Command(&quot;ping&quot;, &quot;pong&quot;, Description = &quot;Responds with `Pong!`&quot;)]
+public static async void Ping(BasicGuildedClient client, CommandInfo info, MessageCreatedEvent messageCreated)
+{
+    // What command does goes here
+}
+</code></pre>
+<p>This creates a command with name <code>ping</code> and aliases <code>pong</code>. It also sets the description as <code>Responds with `Pong!` </code>.<br />
+Now, the command doesn't actually do anything, so let's respond with <code>Pong!</code> whenever someone uses the command. This is how you do exactly that:</p>
+<pre><code class="language-cs">// Sends a message to channel where `ping`/`pong` command was used
+await messageCreated.RespondAsync(
+    // Generates a new message with content `Pong!`
+    Message.Generate(&quot;Pong!&quot;)
+);
+</code></pre>
+<p>Let's turn on the bot and type <code>!ping</code>. And... it doesn't do anything. That's because we need to make client fetch all the commands from the class where the command methods are. To do this, simply use <code>client.FetchCommands(typeof(CommandList))</code> (this method can be used even if the bot hasn't connected yet. The best time to fetch commands is right after the client is created). After you add that, turn on the bot and type <code>!ping</code>, it should respond with <code>Pong!</code>.</p>
+<blockquote class="success-block">
+<p>We have made the most basic command.</p>
+</blockquote>
+<p>Time to make same command, but for forums and comment section. Command method is pretty much the same, apart from additional property in <code>Command</code> attribute, <code>Placement</code>. Add <code>Placement = CommandPlacement.Comments</code> if you want it to work in the comment section and forum replies. Then, change <code>MessageCreatedEvent</code> to <code>ContentReplyCreatedEvent</code>. Here's an example:</p>
+<pre><code class="language-cs">[Command(&quot;ping&quot;, &quot;pong&quot;, Description = &quot;Responds with `Pong!`&quot;, Placement = CommandPlacement.Comments)]
+public static async void PingReply(BasicGuildedClient client, CommandInfo info, ContentReplyCreatedEvent replyCreated)
+{
+    // Stuff
+}
+</code></pre>
+<p>Forum reply/comment commands can also match the same name and aliases, and it won't break anything.</p>
+<p>Time to make it reply with something. To make it reply, it's a bit different:</p>
+<pre><code class="language-cs">// Sends a reply to the post where the command was invoked
+await replyCreated.ReplyAsync(
+    // This ignores markdown.
+    // `markdown-plain-text` only works with messages, not replies,
+    // thus it's recommended to use nodes and leaves for content
+    MessageContent.GenerateText(&quot;Pong!&quot;)
+);
+</code></pre>
+<blockquote class="note-block">
+<p>Notice the differences:</p>
+<ul>
+<li><code>RespondAsync</code> becomes <code>ReplyAsync</code></li>
+<li><code>Message</code> becomes <code>MessageContent</code></li>
+<li><code>Generate</code> becomes <code>GenerateText</code></li>
+</ul>
+</blockquote>
+<blockquote class="warning-block">
+<p>Since <code>markdown-plain-text</code> doesn't properly work outside messages, it is recommended to use nodes and leaves instead of it. This means that in <code>GenerateText</code> method, markdown will be ignored.</p>
+</blockquote>
+<p>Turn on the bot, create a forum post and reply with <code>!ping</code> in that post. The bot should respond with <code>Pong!</code>.</p>
+<h2 id="using-arguments">Using arguments</h2>
+<p>As previously pointed out, arguments aren't strings in Guilded.NET. Instead, they are list of leaves, link nodes, mention nodes, channel mention nodes and emotes. All of those nodes are under umbrella of inline nodes. Block nodes are things like quote blocks, code blocks, images, lists, etc. Arguments won't contain any block nodes, so you don't need to check if it's a block node. These are all under one list with the type <code>IMessageObject</code>. <code>IMessageObject</code> only contains <code>Object</code> property, so you can check if it's a leaf or a node based on that.</p>
+<p>To check if it's a leaf, you can do <code>arg.Object == MsgObject.Leaf</code>. To check if it's an inline node, you can use <code>arg.Object == MsgObject.Inline</code>.</p>
+<p>Let's take this example:</p>
+<pre><code class="language-cs">[Command(&quot;hello&quot;, &quot;hi&quot;, &quot;hey&quot;, Description = &quot;Says hello to a mentioned user.&quot;, Usage = &quot;&lt;user mention&gt;&quot;)]
+public static async void Hello(BasicGuildedClient client, CommandInfo info, MessageCreatedEvent messageCreated)
+{
+    // Gets first argument or default
+    IMessageObject arg = info.Arguments.FirstOrDefault();
+    // Checks if first argument exists and if it's inline node
+    if(arg == default || arg?.Object != MsgObject.Inline) return;
+    // Casts it as a node, because we already checked if it's inline node
+    Node node = (Node)arg;
+    // Makes sure that the type of the node is Mention
+    if(node.Type != NodeType.Mention) return;
+    // Gets it as a mention
+    Mention mention = (Mention)node;
+    // Checks if it's user mention and not a role or everyone mention.
+    if(mention.MentionData.Type != &quot;person&quot;) return;
+    // Says hi to that user
+    await messageCreated.RespondAsync(
+        // We are going to use paragraph in this case instead of markdown-plain-text
+        ParagraphNode.Generate(
+            TextContainer.Generate(&quot;Hello, &quot;)
+            mention,
+            TextContainer.Generate(&quot;!&quot;)
+        )
+    );
+}
+</code></pre>
+<p>Now if we do <code>!hello a</code>, the command should be ignored. If we do <code>!hello @IdkGoodName</code>, it should respond with <code>Hello, @IdkGoodName!</code>.</p>
+<p>If you want to get a normal argument, you can check if the argument is a leaf, cast it to <code>Leaf</code> and then get <code>.Text</code> property.</p>
+<p>Channel mentions are separate node type to user, role and here/everyone mentions. It's <code>ChannelMention</code> instead. Thread mentions are kind of a thing(don't always work in Guilded official app) and they also fall under <code>ChannelMention</code> (at least currently). Hyperlinks aren't leaves. Instead, they are <code>LinkNode</code>, that is inline node.</p>
+<h2 id="rest-of-the-message">Rest of the message</h2>
+<p>You can also get everything after the paragraph that invoked the command. To use it, simply get <code>.Rest</code>. With this, you can get quote blocks and use it as 'big arguments' to have arguments across multiple lines. <code>.Rest</code> is just a normal <code>MessageContent</code> and has nothing else that is fancy in any way.</p>
+
+            </div>
+        </div>
+    </div>
+</body>

@@ -6,111 +6,75 @@
     <link rel="icon" href="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/IconWhiteOutline.png">
     <!-- HTML encoding -->
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta property="og:site_name" content="Guilded.NET">
-    <meta property="og:title" content="Guilded.NET Documentation">
-    <meta property="og:description" content="Guilded.NET website for documentation and information.">
+    <meta property="og:site_name" content="Guilded.NET" />
+    <meta property="og:determiner" content="the" />
+    <meta property="og:title" content="Guilded.NET Documentation" />
+    <meta property="og:description" content="Guilded.NET website for documentation and information." />
     <meta property="og:thumbnail"
-        content="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/IconWhiteOutline.png">
+        content="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/IconWhiteOutline.png" />
     <meta property="og:image"
-        content="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/IconWhiteOutline.png">
-    <meta property="theme-color" content="#f5bc1e">
-    <meta content="utf-8" http-equiv="encoding">
+        content="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/IconWhiteOutline.png" />
+    <meta property="og:locale" content="en_CA" />
+    <meta property="theme-color" content="#f5bc1e" />
+    <meta content="utf-8" http-equiv="encoding" />
     <!-- Adds all of the styling of the website -->
     <link rel="stylesheet" type="text/css" href="./style/main.css" />
     <link rel="stylesheet" type="text/css" href="./style/documentation.css" />
     <link rel="stylesheet" type="text/css" href="./style/prism.css" />
-    <link rel="stylesheet" type="text/css" href="./style/fa.css" />
     <!-- Adds all of the libraries -->
-    <script src="./script/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/prism.min.js"></script>
     <!-- Guilded.NET websites JavaScript files -->
-    <script src="./script/fa.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
     <script src="./script/main.js"></script>
 </head>
 
 <body>
     <!-- Top of the page -->
     <div class="pageTop">
-        <img href="https://github.com/Guilded-NET/Guilded.NET/"
-            src="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/BannerGithub.png" width="25%" />
-    </div>
-    <div class="navigation">
-        <!-- Guilded.NET banner -->
-        <a class="navButton navButtonImg" href="/index">
-            <img src="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/IconWhiteOutline.png" />
-        </a>
-        <!-- Navigation buttons -->
-        <a class="navButton" href="/guides">
-            <i class="fas fa-book-open"></i> Guides
-        </a>
-        <a class="navButton" href="/references">
-            <i class="fas fa-book"></i> References
-        </a>
-        <a class="navButton" href="https://github.com/Guilded-NET/Guilded.NET/">
-            <i class="fab fa-github"></i> Github
-        </a>
-        <a class="navButton" href="https://www.nuget.org/packages/Guilded.NET/">
-            <!-- Source: https://raw.githubusercontent.com/NuGet/Media/master/Images/MainLogo/Vector/nuget_path.svg -->
-            <svg viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs>
-                    <polygon id="path-1"
-                        points="0 46.021103 0 3.7002935 84.6521577 3.7002935 84.6521577 88.3419125 0 88.3419125" />
-                </defs>
-                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g id="nuget">
-                        <g id="Global/Logo" transform="translate(0.000000, 6.000000)">
-                            <path
-                                d="M374.424959,454.856991 C327.675805,454.856991 289.772801,416.950177 289.772801,370.196324 C289.772801,323.463635 327.675805,285.535656 374.424959,285.535656 C421.174113,285.535656 459.077116,323.463635 459.077116,370.196324 C459.077116,416.950177 421.174113,454.856991 374.424959,454.856991 M205.565067,260.814741 C176.33891,260.814741 152.657469,237.109754 152.657469,207.901824 C152.657469,178.672728 176.33891,154.988907 205.565067,154.988907 C234.791225,154.988907 258.472666,178.672728 258.472666,207.901824 C258.472666,237.109754 234.791225,260.814741 205.565067,260.814741 M378.170817,95.6417786 L236.886365,95.6417786 C164.889705,95.6417786 106.479717,154.057639 106.479717,226.082702 L106.479717,367.360191 C106.479717,439.40642 164.889705,497.77995 236.886365,497.77995 L378.170817,497.77995 C450.209803,497.77995 508.577466,439.40642 508.577466,367.360191 L508.577466,226.082702 C508.577466,154.057639 450.209803,95.6417786 378.170817,95.6417786"
-                                id="Fill-12" fill="white" fill-rule="evenodd" />
-                            <g id="Clip-15" />
-                            <path
-                                d="M84.6521577,46.0115787 C84.6521577,69.3990881 65.6900744,88.3419125 42.3260788,88.3419125 C18.9409203,88.3419125 0,69.3990881 0,46.0115787 C0,22.6452344 18.9409203,3.68124485 42.3260788,3.68124485 C65.6900744,3.68124485 84.6521577,22.6452344 84.6521577,46.0115787"
-                                id="Fill-14" fill="white" fill-rule="evenodd" />
-                        </g>
-                    </g>
-                </g>
-            </svg>
-            NuGet
-        </a>
-        <a class="navButton"
-            href="https://www.guilded.gg/Programming/groups/1DvNOxOD/channels/94a1b65f-50e4-4fb3-a355-e285e7c5257d/chat">
-            <i class="fab fa-guilded"></i> Discussions
-        </a>
+        <div class="pageTopInner">
+            <div class="pageDisplay">
+                <img href="/index"
+                    src="https://raw.githubusercontent.com/Guilded-NET/Guilded.NET/main/assets/BannerWhite.png" />
+                <div class="navigation">
+                    <a title="Guides" href="/guides"><i class="fas fa-book-open"></i></a>
+                    <a title="References" href="/references"><i class="fas fa-book"></i></a>
+                    <a title="Github" href="https://github.com/Guilded-NET"><i class="fab fa-github"></i></a>
+                    <a title="Guilded Discussions" href="https://www.guilded.gg/guilded-api/groups/aDk5j9Jz/channels/8c247143-2009-415b-ab99-97912c0685bc/announcements"><i class="fab fa-guilded"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- The main body of the page -->
     <div class="documentBody">
         <div class="sideInfo">
             <div class="content">
-                <h1 id="guides">Guides</h1>
-                <ul>
-                    <li>Getting started
-                        <ul>
-                            <li><a href="guides/startWithTemplates">Getting started with templates</a></li>
-                            <li><a href="guides/startFromScratch">Getting started from scratch</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <h2 id="guides">Guides</h2>
+<ul>
+<li>Getting started
+<ul>
+<li><a href="guides/startWithTemplates">With templates</a></li>
+<li><a href="guides/startFromScratch">From scratch</a></li>
+</ul>
+</li>
+</ul>
 
             </div>
         </div>
         <div class="mainBody">
             <div class="content">
                 <h1 id="guides">Guides</h1>
-                <p>This is the place where all guides and tutorials will be stored. From how to get started, to how to
-                    use embeds.</p>
-                <h1 id="getting-started">Getting Started</h1>
-                <ul>
-                    <li><a href="guides/startWithTemplates">Getting started with templates</a></li>
-                    <li><a href="guides/startFromScratch">Getting started from scratch</a></li>
-                </ul>
-                <h1 id="guides-1">Guides</h1>
-                <ul>
-                    <li><a href="guides/embeds">Embeds</a></li>
-                </ul>
-                <h1 id="contact">Contact</h1>
-                <p>If you have any problems or see an error in the documentation, be sure to contact us at <a
-                        href="https://www.guilded.gg/guilded-api/groups/aDk5j9Jz/channels/8c247143-2009-415b-ab99-97912c0685bc/announcements">Guilded.NET
-                        Discussions channel</a>. Or post an issue on Github.</p>
+<p>This is the place where all guides and tutorials will be stored. From how to get started, to how to use embeds.</p>
+<h1 id="getting-started">Getting Started</h1>
+<ul>
+<li><a href="guides/startWithTemplates">With templates</a></li>
+<li><a href="guides/startFromScratch">From scratch</a></li>
+</ul>
+<h1 id="guides-1">Guides</h1>
+<ul>
+<li><a href="guides/embeds">Embeds</a></li>
+</ul>
+<h1 id="contact">Contact</h1>
+<p>If you have any problems or see an error in the documentation, be sure to contact us at <a href="https://www.guilded.gg/Programming/groups/1DvNOxOD/channels/94a1b65f-50e4-4fb3-a355-e285e7c5257d/chat">Guilded.NET Discussions channel</a>. Or post an issue on GitHub.</p>
 
             </div>
         </div>

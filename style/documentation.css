@@ -2,8 +2,10 @@
     line-break: strict;
     white-space: pre-wrap;
     border-radius: 0.2rem;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    padding-top: 0.05rem;
+    padding-bottom: 0.05rem;
 }
 
 
@@ -19,12 +21,17 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--foreground-level-1);
     font-family: var(--font-header);
 }
+h1 strong,
+h2 strong {
+    color: var(--guilded-gilded);
+}
 h1 {
     border-bottom: var(--header-border);
 }
 /* Links */
 a[href] {
-    color: #F5C400;
+    color: var(--guilded-gilded);
+    text-decoration: none;
 }
 a[href]:visited {
     color: #F47600;
@@ -39,7 +46,7 @@ blockquote {
     padding-left: var(--small-space-size);
     margin-top: var(--small-space-size);
     margin-bottom: var(--small-space-size);
-    border-left: 0.2rem solid #EBBC03;
+    border-left: 0.2rem solid #F5C400;
     border-radius: var(--button-space-size);
     background-color: #FFFFFF09;
     white-space: nowrap;
@@ -60,32 +67,37 @@ blockquote .quote-body {
 .info-block {
     border-left: 0.2rem solid #42a9ee;
 }
-.info-block svg {
+.info-block i {
     color: #42a9ee;
+    fill: #42a9ee;
 }
 .note-block {
     border-left: 0.2rem solid #7e42ee;
 }
-.note-block svg {
+.note-block i {
     color: #7e42ee;
+    fill: #7e42ee;
 }
 .caution-block {
     border-left: 0.2rem solid #ee6442;
 }
-.caution-block svg {
+.caution-block i {
     color: #ee6442;
+    fill: #ee6442;
 }
 .warning-block {
     border-left: 0.2rem solid #ee9e42;
 }
-.warning-block svg {
+.warning-block i {
     color: #ee9e42;
+    fill: #ee9e42;
 }
 .success-block {
     border-left: 0.2rem solid #9eee42;
 }
-.success-block svg {
+.success-block i {
     color: #9eee42;
+    fill: #9eee42;
 }
 
 /* Styles both markdown inline code and code blocks */
@@ -120,7 +132,9 @@ table tbody tr td {
     background-color: var(--background-level-2);
     border: 0.05rem solid;
     border-color: #FFFFFF12;
-    border-radius: 0.3rem;
+    border-top-right-radius: var(--embed-radius);
+    border-bottom-right-radius: var(--embed-radius);
+    overflow: hidden
 }
 .gembed-inner {
     border-left: 0.2rem solid;

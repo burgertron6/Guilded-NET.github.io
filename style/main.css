@@ -1,9 +1,8 @@
 :root {
-    --background-code: #141414;
-    --font-code: "Segoe UI", "Arial";
+    --background-code: #1C1C1C;
+    --font-code: 'Gotham', "Segoe UI", "Arial";
     --font-normal: Calibri, Arial;
-    --font-header: "Calisto MT", "Bookman Old Style", Calibri, Arial;
-    --background-very-dark: #1C1C1C;
+    --font-header: 'Gotham Heavy', 'Gotham Black', 'Gotham Medium', "Calisto MT", "Bookman Old Style", Calibri, Arial;
     --background-level-1: #121212;
     --background-level-2: #191919;
     --background-level-3: #212121;
@@ -17,10 +16,12 @@
     --small-space-size: 1rem;
     --default-space-size: 2rem;
     --big-space-size: 3rem;
+    --embed-radius: 0.4rem;
+    --guilded-gilded: #F5C400;
 }
 
 body {
-    background-color: var(--background-level-2);
+    background-color: var(--background-level-1);
     color: var(--foreground-level-2);
     font-family: var(--font-normal);
     margin: 0;
@@ -55,22 +56,38 @@ body {
 .pageTop {
     background-color: var(--background-level-1);
     color: var(--foreground-level-1);
-    width: 100%;
-    padding-bottom: var(--small-space-size);
     vertical-align: top;
+    width: 100%;
 }
-
-.pageTop img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: var(--small-space-size);
+.pageTopInner {
+    padding: var(--default-space-size);
+}
+.pageDisplay {
+    padding-bottom: var(--smaller-space-size);
+    border-bottom: 1px solid white;
+}
+.pageDisplay img {
     cursor: pointer;
+    width: 10%;
+}
+.navigation {
+    float: right;
+}
+.navigation a {
+    margin-left: var(--smaller-space-size);
+    margin-right: var(--smaller-space-size);
+}
+.navigation a,
+.navigation a[href],
+.navigation a[href]:visited,
+.navigation a[href]:active {
+    color: white;
+    fill: white;
 }
 
 /* A fixed/sticky navigation on top of the screen */
 
-.navigation {
+/* .navigation {
     position: sticky;
     top: 0;
     background-color: var(--background-level-1);
@@ -116,7 +133,7 @@ body {
 .navButtonImg:active {
     padding: 0;
     background-color: var(--background-level-1);
-}
+} */
 
 /* Body of the page */
 .documentBody {
@@ -124,7 +141,7 @@ body {
     display: flex;
 }
 .mainBody, .sideInfo {
-    background-color: var(--background-level-3);
+    background-color: var(--background-level-2);
     border-radius: var(--smaller-space-size);
     margin: var(--smaller-space-size);
     float: right;
