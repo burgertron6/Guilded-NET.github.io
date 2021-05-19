@@ -1,0 +1,19 @@
+## Namespaces
+
+- `Guilded.NET`
+    - `BasicGuildedClient`
+    - `CommandAttribute`/`Command`
+    - `CommandInfo`
+- `Guilded.NET.Objects.Events`
+    - `MessageCreatedEvent`
+    - `ContentReplyCreatedEvent`
+- `Guilded.NET.Objects.Chat`
+    - `Leaf`
+    - `TextContainer`
+    - `Node`
+    - `ParagraphNode`
+    - `Mention`
+    - `ChannelMention`
+    - `IMessageObject`
+    - `MsgObject`
+    - `NodeType`
