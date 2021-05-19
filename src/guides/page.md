@@ -10,6 +10,7 @@ This is the place where all guides and tutorials will be stored. From how to get
 # Guides
 
 - [Embeds](guides/embeds)
+- [Making commands](guides/makingCommands)
 
 # Contact
 
